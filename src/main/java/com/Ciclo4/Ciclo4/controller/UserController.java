@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/User")
+@RequestMapping("/api/user")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 
 public class UserController {
@@ -23,7 +23,7 @@ public class UserController {
         return userService.getAll();
     }
 
-    @PostMapping("/save")
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public User save(@RequestBody User user) {
         return userService.save(user);
