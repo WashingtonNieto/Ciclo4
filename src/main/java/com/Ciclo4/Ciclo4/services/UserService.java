@@ -25,15 +25,29 @@ public class UserService {
 
     public User save(User user) {
         if (user.getId()==null) {
-            return metodosCrud.save(user);
-        } else {
-            Optional<User> e = metodosCrud.getUser(user.getId());
-            if (e.isEmpty()) {
+            if (existeEmail(user.getEmail()) == false){
                 return metodosCrud.save(user);
-            } else {
+            }else {
                 return user;
             }
+        } else {
+            return user;
         }
+
     }
 
+    public boolean existeEmail(String email){
+        return metodosCrud.existeEmail(email);
+    }
+    public User autenticarUsuario(String email, String password) {
+        Optional<User> usuario = metodosCrud.autenticarUsuario(email, password);
+
+        if (usuario.isEmpty()) {
+//            return new User(email, password, "NO DEFINIDO");
+            return usuario.get();
+
+        } else {
+            return usuario.get();
+        }
+    }
 }

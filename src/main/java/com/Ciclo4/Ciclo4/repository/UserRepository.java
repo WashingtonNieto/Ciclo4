@@ -24,6 +24,15 @@ public class UserRepository {
     public User save(User User){
         return crud.save(User);
     }
+
+    public boolean existeEmail(String email){
+        Optional<User> usuario = crud.findByEmail(email);
+        return !usuario.isEmpty();
+    }
+    public Optional<User> autenticarUsuario(String email, String password){
+        return crud.findByEmailAndPassword(email, password);
+    }
+
     public void delete(User User){
         crud.delete(User);
     }

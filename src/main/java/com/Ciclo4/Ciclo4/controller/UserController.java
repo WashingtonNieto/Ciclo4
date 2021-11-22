@@ -29,4 +29,14 @@ public class UserController {
         return userService.save(user);
     }
 
+    @GetMapping("/{email}/{password}")
+    public User autenticarUsuario(@PathVariable("email") String email, @PathVariable("password") String password) {
+        return userService.autenticarUsuario(email,password);
+    }
+
+    @GetMapping("/{email}")
+    public boolean existeEmail(@PathVariable("email") String email) {
+        return userService.existeEmail(email);
+    }
+
 }
