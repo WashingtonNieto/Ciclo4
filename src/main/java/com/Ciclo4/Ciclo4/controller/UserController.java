@@ -2,7 +2,6 @@ package com.Ciclo4.Ciclo4.controller;
 
 import com.Ciclo4.Ciclo4.entity.User;
 import com.Ciclo4.Ciclo4.services.UserService;
-import org.apache.catalina.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
