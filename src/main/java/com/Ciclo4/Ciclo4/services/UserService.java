@@ -43,8 +43,8 @@ public class UserService {
         Optional<User> usuario = metodosCrud.autenticarUsuario(email, password);
 
         if (usuario.isEmpty()) {
-//            return new User(email, password, "NO DEFINIDO");
-            return usuario.get();
+            return new User(email, password, "NO DEFINIDO");
+            //return usuario.get();
 
         } else {
             return usuario.get();
